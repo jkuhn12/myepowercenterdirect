@@ -1,9 +1,15 @@
+<?php
+// ePowerCenterDirect - CRM Landing Page
+$siteName = "ePowerCenterDirect";
+$currentYear = date('Y');
+$serverTime = date('H:i:s');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
-    <title>ePowerCenterDirect - CRM Solutions</title>
+    <title><?php echo $siteName; ?> - CRM Solutions</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,7 +42,7 @@
 
                 <div id="upload-zone">
                     <div id="big-button" class="big-bat-button">
-                        <div class="button-icon">📁</div>
+                        <div class="button-icon">&#128193;</div>
                         <div class="button-text">Drag Files Here.bat</div>
                         <div class="button-hint">or click to browse</div>
                     </div>
@@ -84,14 +90,14 @@
                         All Systems Operational
                     </div>
                     <div style="margin-top: 10px; font-size: 11px; color: #666;">
-                        Server Time: <span id="server-time">--:--:--</span>
+                        Server Time: <span id="server-time"><?php echo $serverTime; ?></span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="footer">
-            <p>&copy; 2008 ePowerCenterDirect Inc. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p>&copy; <?php echo $currentYear; ?> ePowerCenterDirect Inc. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             <p style="font-size: 10px; color: #999; margin-top: 5px;">Best viewed in Internet Explorer 7 or Firefox 3.0 at 1024x768</p>
         </div>
     </div>
