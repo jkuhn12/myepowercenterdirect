@@ -28,7 +28,7 @@ $serverTime = date('H:i:s');
                 <li><a href="#">Contacts</a></li>
                 <li><a href="#">Leads</a></li>
                 <li><a href="#">Reports</a></li>
-                <li><a href="#">Admin</a></li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </div>
 
