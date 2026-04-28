@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a90d9"/>
+      <stop offset="50%" stop-color="#357abd"/>
+      <stop offset="51%" stop-color="#2a6da3"/>
+      <stop offset="100%" stop-color="#1e5a8e"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="45%" stop-color="rgba(255,255,255,0.1)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
+  </defs>
+  <rect width="32" height="32" rx="6" ry="6" fill="url(#bg)" stroke="#1a4a7a" stroke-width="1.5"/>
+  <rect x="1.5" y="1.5" width="29" height="14" rx="4" ry="4" fill="url(#shine)"/>
+  <text x="16" y="23" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle" filter="url(#shadow)">e</text>
+  <circle cx="24" cy="8" r="3.5" fill="#ff8800" stroke="#cc6600" stroke-width="0.8"/>
+  <ellipse cx="24" cy="6.8" rx="2" ry="1" fill="rgba(255,255,255,0.5)"/>
+</svg>

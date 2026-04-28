@@ -20,6 +20,7 @@ function statusBadge($s) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
     <title><?php echo $case ? 'Case #' . htmlspecialchars($caseId) : 'Case Not Found'; ?> - <?php echo htmlspecialchars($siteName); ?></title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <style>
         .detail-box { margin-top: 15px; }

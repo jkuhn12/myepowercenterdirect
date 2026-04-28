@@ -10,6 +10,7 @@ $serverTime = date('H:i:s');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
     <title><?php echo $siteName; ?> - CRM Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

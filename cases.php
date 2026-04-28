@@ -23,6 +23,7 @@ function statusBadge($s) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
     <title>Customer Cases - <?php echo htmlspecialchars($siteName); ?></title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <style>
         .cases-table { width: 100%; border: 1px solid #ccc; border-radius: 4px; overflow: hidden; font-size: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }

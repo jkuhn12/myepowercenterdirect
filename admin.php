@@ -25,6 +25,7 @@ if ($isLoggedIn && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['broadc
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
     <title>Admin Panel - <?php echo htmlspecialchars($siteName); ?></title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <style>
         .login-box { max-width: 350px; margin: 60px auto; }

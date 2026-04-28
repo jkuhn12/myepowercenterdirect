@@ -9,6 +9,7 @@ $currentYear = date('Y');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
     <title>Privacy Policy - <?php echo htmlspecialchars($siteName); ?></title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

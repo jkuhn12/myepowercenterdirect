@@ -36,6 +36,7 @@ if ($isLoggedIn && isset($_GET['download']) && $_GET['download'] === 'cases') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
     <title>Reports - <?php echo htmlspecialchars($siteName); ?></title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <style>
         .report-card { margin-bottom: 20px; }
