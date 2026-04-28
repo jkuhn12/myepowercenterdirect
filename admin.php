@@ -77,7 +77,7 @@ if ($isLoggedIn && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['broadc
             <ul>
                 <li><a href="index.php">Dashboard</a></li>
                 <li><a href="cases.php">Cases</a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="reports.php">Reports</a></li>
                 <li><a href="admin.php" class="active">Admin</a></li>
             </ul>
         </div>

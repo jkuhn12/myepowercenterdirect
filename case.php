@@ -1,23 +1,12 @@
 <?php
 // ePowerCenterDirect - Case Detail Page
 require_once 'auth.php';
+require_once 'data.php';
 $siteName = "ePowerCenterDirect";
 $currentYear = date('Y');
 
-// Fake customer cases data (must match cases.php)
-$customerCases = [
-    1001 => ['customer' => 'Acme Corporation', 'subject' => 'Billing discrepancy on Q3 invoice', 'status' => 'Open', 'priority' => 'High', 'date' => '2008-03-15', 'assigned' => 'Alice Johnson', 'description' => 'Customer reports that the Q3 invoice total does not match their internal records. Discrepancy appears to be related to promotional credits not being applied correctly. Awaiting finance team review.'],
-    1002 => ['customer' => 'Globex Industries', 'subject' => 'Feature request: custom reporting module', 'status' => 'Pending', 'priority' => 'Medium', 'date' => '2008-03-18', 'assigned' => 'Bob Smith', 'description' => 'Globex has requested a custom reporting module that allows them to export quarterly sales data in a specific CSV format. This has been logged as a feature request for the next product cycle.'],
-    1003 => ['customer' => 'Initech LLC', 'subject' => 'Login issues after password reset', 'status' => 'Closed', 'priority' => 'High', 'date' => '2008-02-22', 'assigned' => 'Carol White', 'description' => 'Users unable to log in after using the self-service password reset tool. Root cause identified: cached session cookies on client browsers. Resolution: advised users to clear cookies and use the new login link.'],
-    1004 => ['customer' => 'Umbrella Corp', 'subject' => 'Data export timeout on large datasets', 'status' => 'Open', 'priority' => 'Medium', 'date' => '2008-04-02', 'assigned' => 'David Lee', 'description' => 'Exporting datasets larger than 50,000 records results in a server timeout. Engineering team is investigating batch processing options to handle larger exports without hitting the 30-second execution limit.'],
-    1005 => ['customer' => 'Stark Enterprises', 'subject' => 'Integration with legacy ERP system', 'status' => 'Pending', 'priority' => 'Low', 'date' => '2008-04-05', 'assigned' => 'Eve Brown', 'description' => 'Stark Enterprises needs bidirectional sync with their 1998-era ERP system. The ERP supports only flat-file exchange via FTP. A custom adapter will need to be developed.'],
-    1006 => ['customer' => 'Wayne Industries', 'subject' => 'Duplicate contact records merge request', 'status' => 'Open', 'priority' => 'Low', 'date' => '2008-04-08', 'assigned' => 'Alice Johnson', 'description' => 'Approximately 400 duplicate contact records were created during a bulk import. Customer has provided a mapping spreadsheet. Data cleanup scheduled for next maintenance window.'],
-    1007 => ['customer' => 'Cyberdyne Systems', 'subject' => 'Scheduled backup failure notification', 'status' => 'Closed', 'priority' => 'High', 'date' => '2008-01-30', 'assigned' => 'Bob Smith', 'description' => 'Automated nightly backup job failed for three consecutive days. Issue traced to insufficient disk space on the backup volume. Old backups archived and job resumed successfully.'],
-    1008 => ['customer' => 'Massive Dynamic', 'subject' => 'User permissions not propagating to sub-accounts', 'status' => 'Open', 'priority' => 'Medium', 'date' => '2008-04-10', 'assigned' => 'Carol White', 'description' => 'When a manager account permissions are updated, the changes are not reflected in their subordinate accounts. The permission inheritance logic appears to be skipping nested groups. Bug ticket #4421 opened.'],
-];
-
 $caseId = isset($_GET['id']) ? intval($_GET['id']) : 0;
-$case = isset($customerCases[$caseId]) ? $customerCases[$caseId] : null;
+$case = isset($customerCasesIndex[$caseId]) ? $customerCasesIndex[$caseId] : null;
 
 function statusBadge($s) {
     if ($s === 'Open') return '<span class="status-badge status-open">Open</span>';
@@ -61,7 +50,7 @@ function statusBadge($s) {
             <ul>
                 <li><a href="index.php">Dashboard</a></li>
                 <li><a href="cases.php" class="active">Cases</a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="reports.php">Reports</a></li>
                 <li><a href="admin.php">Admin</a></li>
             </ul>
         </div>

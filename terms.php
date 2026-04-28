@@ -25,7 +25,7 @@ $currentYear = date('Y');
             <ul>
                 <li><a href="index.php">Dashboard</a></li>
                 <li><a href="cases.php">Cases</a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="reports.php">Reports</a></li>
                 <li><a href="admin.php">Admin</a></li>
             </ul>
         </div>

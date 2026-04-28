@@ -1,20 +1,9 @@
 <?php
 // ePowerCenterDirect - Cases List Page
 require_once 'auth.php';
+require_once 'data.php';
 $siteName = "ePowerCenterDirect";
 $currentYear = date('Y');
-
-// Fake customer cases data
-$customerCases = [
-    ['id' => 1001, 'customer' => 'Acme Corporation', 'subject' => 'Billing discrepancy on Q3 invoice', 'status' => 'Open', 'priority' => 'High', 'date' => '2008-03-15', 'assigned' => 'Alice Johnson'],
-    ['id' => 1002, 'customer' => 'Globex Industries', 'subject' => 'Feature request: custom reporting module', 'status' => 'Pending', 'priority' => 'Medium', 'date' => '2008-03-18', 'assigned' => 'Bob Smith'],
-    ['id' => 1003, 'customer' => 'Initech LLC', 'subject' => 'Login issues after password reset', 'status' => 'Closed', 'priority' => 'High', 'date' => '2008-02-22', 'assigned' => 'Carol White'],
-    ['id' => 1004, 'customer' => 'Umbrella Corp', 'subject' => 'Data export timeout on large datasets', 'status' => 'Open', 'priority' => 'Medium', 'date' => '2008-04-02', 'assigned' => 'David Lee'],
-    ['id' => 1005, 'customer' => 'Stark Enterprises', 'subject' => 'Integration with legacy ERP system', 'status' => 'Pending', 'priority' => 'Low', 'date' => '2008-04-05', 'assigned' => 'Eve Brown'],
-    ['id' => 1006, 'customer' => 'Wayne Industries', 'subject' => 'Duplicate contact records merge request', 'status' => 'Open', 'priority' => 'Low', 'date' => '2008-04-08', 'assigned' => 'Alice Johnson'],
-    ['id' => 1007, 'customer' => 'Cyberdyne Systems', 'subject' => 'Scheduled backup failure notification', 'status' => 'Closed', 'priority' => 'High', 'date' => '2008-01-30', 'assigned' => 'Bob Smith'],
-    ['id' => 1008, 'customer' => 'Massive Dynamic', 'subject' => 'User permissions not propagating to sub-accounts', 'status' => 'Open', 'priority' => 'Medium', 'date' => '2008-04-10', 'assigned' => 'Carol White'],
-];
 
 function priorityColor($p) {
     if ($p === 'High') return 'color:#cc0000;font-weight:bold;';
@@ -65,7 +54,7 @@ function statusBadge($s) {
             <ul>
                 <li><a href="index.php">Dashboard</a></li>
                 <li><a href="cases.php" class="active">Cases</a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="reports.php">Reports</a></li>
                 <li><a href="admin.php">Admin</a></li>
             </ul>
         </div>
