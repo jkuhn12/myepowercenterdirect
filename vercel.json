@@ -9,6 +9,6 @@
     { "src": "/styles.css", "dest": "/styles.css" },
     { "src": "/app.js", "dest": "/app.js" },
     { "src": "/admin.php", "dest": "/admin.php" },
-    { "src": "/(.*)", "dest": "/index.php" }
+    { "src": "^/$", "status": 302, "dest": "/index.php" }
   ]
 }
