@@ -1,10 +1,8 @@
 <?php
 // ePowerCenterDirect - Admin Panel (Harmless Demo)
+require_once 'auth.php';
 $siteName = "ePowerCenterDirect";
 $currentYear = date('Y');
-$authCookieName = 'epcd_admin_auth';
-$isLoggedIn = false;
-$error = '';
 $broadcastMessage = '';
 
 // Fake harmless user data
@@ -15,31 +13,6 @@ $users = [
     ['id' => 104, 'name' => 'David Lee', 'role' => 'Sales Rep', 'status' => 'Active'],
     ['id' => 105, 'name' => 'Eve Brown', 'role' => 'Admin', 'status' => 'Active'],
 ];
-
-// Handle logout
-if (isset($_POST['logout'])) {
-    setcookie($authCookieName, '', time() - 3600, '/');
-    header('Location: admin.php');
-    exit;
-}
-
-// Check auth cookie
-if (isset($_COOKIE[$authCookieName]) && $_COOKIE[$authCookieName] === 'dcm_authenticated') {
-    $isLoggedIn = true;
-}
-
-// Handle login
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
-    $user = isset($_POST['username']) ? $_POST['username'] : '';
-    $pass = isset($_POST['password']) ? $_POST['password'] : '';
-    if ($user === 'dcm' && $pass === 'dcm') {
-        setcookie($authCookieName, 'dcm_authenticated', time() + 3600, '/');
-        header('Location: admin.php');
-        exit;
-    } else {
-        $error = 'Invalid username or password.';
-    }
-}
 
 // Handle harmless broadcast form
 if ($isLoggedIn && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['broadcast'])) {
@@ -103,8 +76,7 @@ if ($isLoggedIn && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['broadc
         <div id="nav">
             <ul>
                 <li><a href="index.php">Dashboard</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Leads</a></li>
+                <li><a href="cases.php">Cases</a></li>
                 <li><a href="#">Reports</a></li>
                 <li><a href="admin.php" class="active">Admin</a></li>
             </ul>
@@ -118,8 +90,8 @@ if ($isLoggedIn && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['broadc
                     <div class="login-box">
                         <div class="content-box">
                             <h3>Secure Login Required</h3>
-                            <?php if ($error): ?>
-                                <div class="error"><?php echo htmlspecialchars($error); ?></div>
+                            <?php if ($loginError): ?>
+                                <div class="error"><?php echo htmlspecialchars($loginError); ?></div>
                             <?php endif; ?>
                             <form method="post" action="admin.php">
                                 <input type="text" name="username" placeholder="Username" required>
@@ -210,7 +182,7 @@ if ($isLoggedIn && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['broadc
         </div>
 
         <div id="footer">
-            <p>&copy; <?php echo htmlspecialchars($currentYear); ?> ePowerCenterDirect Inc. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p>&copy; <?php echo htmlspecialchars($currentYear); ?> ePowerCenterDirect Inc. All rights reserved. | <a href="privacy.php">Privacy Policy</a> | <a href="terms.php">Terms of Service</a></p>
             <p style="font-size: 10px; color: #999; margin-top: 5px;">Best viewed in Internet Explorer 7 or Firefox 3.0 at 1024x768</p>
         </div>
     </div>

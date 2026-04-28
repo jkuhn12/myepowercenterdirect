@@ -24,9 +24,8 @@ $serverTime = date('H:i:s');
 
         <div id="nav">
             <ul>
-                <li><a href="#" class="active">Dashboard</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Leads</a></li>
+                <li><a href="index.php" class="active">Dashboard</a></li>
+                <li><a href="cases.php">Cases</a></li>
                 <li><a href="#">Reports</a></li>
                 <li><a href="admin.php">Admin</a></li>
             </ul>
@@ -97,7 +96,7 @@ $serverTime = date('H:i:s');
         </div>
 
         <div id="footer">
-            <p>&copy; <?php echo $currentYear; ?> ePowerCenterDirect Inc. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p>&copy; <?php echo $currentYear; ?> ePowerCenterDirect Inc. All rights reserved. | <a href="privacy.php">Privacy Policy</a> | <a href="terms.php">Terms of Service</a></p>
             <p style="font-size: 10px; color: #999; margin-top: 5px;">Best viewed in Internet Explorer 7 or Firefox 3.0 at 1024x768</p>
         </div>
     </div>
