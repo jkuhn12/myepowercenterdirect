@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <title>PowerCenter Direct - CRM Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="logo">
+                <h1>PowerCenter<span style="color:#ff8800">Direct</span></h1>
+                <span class="beta-badge">BETA</span>
+            </div>
+            <div class="tagline">Enterprise Customer Relationship Management Simplified</div>
+        </div>
+
+        <div id="nav">
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Leads</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Admin</a></li>
+            </ul>
+        </div>
+
+        <div id="main">
+            <div class="content-box">
+                <h2>Welcome to Your CRM Dashboard</h2>
+                <p style="margin-bottom: 20px;">
+                    Manage your customer relationships with our powerful, easy-to-use platform.
+                    Get started by importing your existing data files below.
+                </p>
+
+                <div id="upload-zone">
+                    <div id="big-button" class="big-bat-button">
+                        <div class="button-icon">📁</div>
+                        <div class="button-text">Drag Files Here.bat</div>
+                        <div class="button-hint">or click to browse</div>
+                    </div>
+                    <input type="file" id="file-input" style="display:none" multiple>
+                </div>
+
+                <div id="file-list-area" style="display:none">
+                    <h3>Your Linked Files</h3>
+                    <table id="file-table" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>Type</th>
+                                <th>Size</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="file-list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="content-box">
+                    <h3>Quick Stats</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Contacts:</span>
+                        <span class="stat-value">1,247</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Active Leads:</span>
+                        <span class="stat-value">86</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">This Month:</span>
+                        <span class="stat-value">$42,500</span>
+                    </div>
+                </div>
+
+                <div class="content-box" style="margin-top: 15px;">
+                    <h3>System Status</h3>
+                    <div class="status-indicator online">
+                        <span class="status-dot"></span>
+                        All Systems Operational
+                    </div>
+                    <div style="margin-top: 10px; font-size: 11px; color: #666;">
+                        Server Time: <span id="server-time">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>&copy; 2008 PowerCenter Direct Inc. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p style="font-size: 10px; color: #999; margin-top: 5px;">Best viewed in Internet Explorer 7 or Firefox 3.0 at 1024x768</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
